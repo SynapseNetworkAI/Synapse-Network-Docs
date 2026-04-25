@@ -1,0 +1,27 @@
+name: Docs Hygiene
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  docs-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate docs funnel
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f llm-instructions.md
+          grep -q "Read the Full Documentation" README.md
+          grep -q "https://staging.synapse-network.ai/docs" README.md
+          grep -q "SynapseClient" README.md
+          grep -q "<system_prompt>" llm-instructions.md
+          grep -q "CRITICAL RULES FOR AI AGENTS" llm-instructions.md
+          stale_domain="gateway"".synapse"".network"
+          if grep -R "$stale_domain" . --exclude-dir=.git; then
+            echo "Found stale gateway dot synapse dot network domain"
+            exit 1
+          fi

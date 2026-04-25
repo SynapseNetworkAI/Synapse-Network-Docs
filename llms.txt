@@ -1,0 +1,26 @@
+# Synapse-Network-Docs Agent Map
+
+This repository is the GitHub funnel and agent-readable map for Synapse AgentPay docs.
+
+## Read First
+
+1. `README.md` - public GitHub billboard and fast agent quickstart.
+2. `llm-instructions.md` - compact prompt rules for coding agents.
+3. `examples/` - copyable first-call examples.
+4. `docs/` - lightweight links into the staging docs site.
+
+## Canonical Product Docs
+
+- SDK hub: https://staging.synapse-network.ai/docs/sdk
+- Python SDK: https://staging.synapse-network.ai/docs/sdk/python
+- TypeScript SDK: https://staging.synapse-network.ai/docs/sdk/typescript
+- Concepts: https://staging.synapse-network.ai/docs/concepts
+- Contracts: https://staging.synapse-network.ai/docs/contracts
+
+## V1 Docs Contribution Rule
+
+Do not add "Edit this page" links to the product docs site until the rendered docs pages are generated from this repository. Use GitHub Issues for docs feedback in V1.
+
+## Agent Runtime Rule
+
+Agent integrations should prefer `SynapseClient` with an `agt_xxx` Agent Key. Do not use owner wallet or `SynapseAuth` flows unless the user explicitly asks for owner/admin setup.
