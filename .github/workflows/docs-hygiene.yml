@@ -14,8 +14,12 @@ jobs:
         run: |
           set -euo pipefail
           test -f README.md
+          test -f README.zh-CN.md
           test -f llm-instructions.md
+          grep -q '<strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>' README.md
+          grep -q '<a href="./README.md">English</a> · <strong>简体中文</strong>' README.zh-CN.md
           grep -q "Read the Full Documentation" README.md
+          grep -q "阅读完整文档" README.zh-CN.md
           grep -q "https://staging.synapse-network.ai/docs" README.md
           grep -q "SynapseClient" README.md
           grep -q "<system_prompt>" llm-instructions.md
@@ -25,3 +29,23 @@ jobs:
             echo "Found stale gateway dot synapse dot network domain"
             exit 1
           fi
+          old_agent_pay="Agent""Pay"
+          old_synapse_agent_pay="Synapse Agent""Pay"
+          old_business_to_agent="Business-to-""Agent"
+          old_b2a="B""2A"
+          if grep -RInE "($old_synapse_agent_pay|$old_agent_pay|$old_business_to_agent|$old_b2a)" . --exclude-dir=.git; then
+            echo "Found deprecated product brand wording; use SynapseNetwork"
+            exit 1
+          fi
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          def assert_no_han(path: str) -> None:
+              text = Path(path).read_text()
+              normalized = text.replace("简体中文", "")
+              if re.search(r"[\u4e00-\u9fff]", normalized):
+                  raise SystemExit(f"{path} should keep Chinese content in README.zh-CN.md")
+
+          assert_no_han("README.md")
+          PY

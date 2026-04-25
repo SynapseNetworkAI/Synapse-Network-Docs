@@ -14,11 +14,11 @@ English appears first. Chinese follows each major section.
 
 Recommended description:
 
-Synapse AgentPay: Business-to-Agent crypto payments for AI agents.
+SynapseNetwork: AI agents call APIs and make small USDC payments through blockchain-backed settlement.
 
 推荐描述：
 
-Synapse AgentPay：面向 AI Agent 的 Business-to-Agent 加密支付网关。
+SynapseNetwork：AI Agent 通过平台调用 API，并通过区块链支持的 USDC 结算完成小额付款。
 
 Recommended website:
 
@@ -65,6 +65,18 @@ Keep the README clear that:
 - `staging` 当前可用，基于测试网，使用 MockUSDC。
 - `prod` 为主网 GA 预留，使用真实 USDC。
 - 在 DNS、health、资金和人工门控准备好之前，不要把 production 描述为已公开可用。
+
+## Brand Message
+
+Use SynapseNetwork as the product name.
+
+Do not use old agent-payment labels as the product name. "Agent payments" can be used as a category or capability, not as the product brand.
+
+品牌信息：
+
+产品名使用 SynapseNetwork。
+
+不要把旧的 agent-payment 命名当作产品名。"Agent payments" 可以作为能力类别描述，但不是产品品牌。
 
 ## V1 Contribution Loop
 
