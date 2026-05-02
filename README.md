@@ -10,9 +10,9 @@
 
 AI-native API commerce, payment, and settlement infrastructure for agents.
 
-[Read the Full Documentation](https://staging.synapse-network.ai/docs) ·
-[Python SDK](https://staging.synapse-network.ai/docs/sdk/python) ·
-[TypeScript SDK](https://staging.synapse-network.ai/docs/sdk/typescript) ·
+[Read the Full Documentation](https://synapse-network.ai/docs) ·
+[Python SDK](https://synapse-network.ai/docs/sdk/python) ·
+[TypeScript SDK](https://synapse-network.ai/docs/sdk/typescript) ·
 [SDK Repository](https://github.com/SynapseNetworkAI/Synapse-Network-Sdk)
 
 SynapseNetwork lets agents discover services, call APIs through the platform, pay small USDC-priced amounts through blockchain-backed settlement, and verify every invocation with receipts.
@@ -26,18 +26,20 @@ Open the **[Synapse Gateway Dashboard (Testnet Sandbox)](https://staging.synapse
 Step 2: Let your agent discover and work.
 
 ```python
+import os
+
 from synapse_client import SynapseClient
 
 # Use "staging" for testnet (free), "prod" for mainnet (real USDC).
-client = SynapseClient(api_key="agt_xxx", environment="staging")
+client = SynapseClient(api_key=os.environ["SYNAPSE_AGENT_KEY"], environment="staging")
 
-services = client.search("free", limit=10)
+services = client.search("svc_synapse_echo", limit=10)
 service = services[0]
 
 result = client.invoke(
     service.service_id,
-    {"prompt": "hello"},
-    cost_usdc=float(service.price_usdc),
+    {"message": "hello from SynapseNetwork"},
+    cost_usdc=str(service.price_usdc),
     idempotency_key="agent-job-001",
 )
 
@@ -46,22 +48,22 @@ print(receipt.invocation_id, receipt.status, receipt.charged_usdc)
 ```
 
 ```ts
-import { SynapseClient } from "@synapse-network/sdk";
+import { SynapseClient } from "@synapse-network-ai/sdk";
 
 const client = new SynapseClient({
-  credential: "agt_xxx",
+  credential: process.env.SYNAPSE_AGENT_KEY!,
   // Use "staging" for testnet (free), "prod" for mainnet (real USDC).
   environment: "staging",
 });
 
-const services = await client.search("free", { limit: 10 });
+const services = await client.search("svc_synapse_echo", { limit: 10 });
 const service = services[0];
 
 const result = await client.invoke(
   service.serviceId ?? service.id!,
-  { prompt: "hello" },
+  { message: "hello from SynapseNetwork" },
   {
-    costUsdc: Number(service.pricing?.amount ?? 0),
+    costUsdc: String(service.pricing?.amount ?? "0"),
     idempotencyKey: "agent-job-001",
   }
 );
@@ -86,7 +88,7 @@ The Quickstart uses `staging`. Switch to `prod` only after production is un-gate
 - Small API payments: agents can pay per invocation instead of relying on large prepaid integrations.
 - Blockchain-backed settlement: USDC custody and settlement evidence are anchored through the chain-backed payment layer.
 - Receipts: every invocation can be checked after settlement.
-- Staging-first preview: production docs and domains remain reserved until GA.
+- Production docs-first discovery with staging as the testnet sandbox.
 
 ## For AI Coding Agents
 
@@ -96,13 +98,21 @@ The most important rule: agent runtime code should use `SynapseClient`, not owne
 
 ## Full Docs
 
-This repository is the GitHub funnel and agent-readable index. The polished product documentation lives on the Gateway docs site:
+This repository is the GitHub funnel and agent-readable index. The polished product documentation lives on the production docs site:
 
-- SDK hub: <https://staging.synapse-network.ai/docs/sdk>
-- Python SDK: <https://staging.synapse-network.ai/docs/sdk/python>
-- TypeScript SDK: <https://staging.synapse-network.ai/docs/sdk/typescript>
-- Concepts: <https://staging.synapse-network.ai/docs/concepts>
-- Contracts: <https://staging.synapse-network.ai/docs/contracts>
+- SDK hub: <https://synapse-network.ai/docs/sdk>
+- Python SDK: <https://synapse-network.ai/docs/sdk/python>
+- TypeScript SDK: <https://synapse-network.ai/docs/sdk/typescript>
+- Concepts: <https://synapse-network.ai/docs/concepts>
+- Contracts: <https://synapse-network.ai/docs/contracts>
+
+Staging remains the public testnet sandbox for first calls and integration tests: <https://staging.synapse-network.ai/docs>.
+
+Preview SDK guides for Go, Java/JVM, and .NET live in the official SDK repository until product docs pages are generated:
+
+- Go SDK: <https://github.com/SynapseNetworkAI/Synapse-Network-Sdk/blob/main/docs/sdk/go_integration.md>
+- Java/JVM SDK: <https://github.com/SynapseNetworkAI/Synapse-Network-Sdk/blob/main/docs/sdk/java_integration.md>
+- .NET SDK: <https://github.com/SynapseNetworkAI/Synapse-Network-Sdk/blob/main/docs/sdk/dotnet_integration.md>
 
 V1 intentionally does not expose "Edit this page" links from the docs site because this repository is not yet the source of truth for every rendered docs page. Please use GitHub Issues for docs feedback until docs-source sync lands.
 
