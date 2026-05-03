@@ -7,23 +7,25 @@ Use this when the developer or AI agent already has an Agent Key from the Synaps
 ```bash
 pip install synapse-client
 export SYNAPSE_ENV=staging
-export SYNAPSE_API_KEY=agt_xxx
+export SYNAPSE_AGENT_KEY=agt_xxx
 ```
 
 ```python
+import os
+
 from synapse_client import SynapseClient
 
 # Use "staging" for testnet (free), "prod" for mainnet (real USDC).
 # 使用 "staging" 连接测试网免费环境，使用 "prod" 连接主网真实 USDC 环境。
-client = SynapseClient()
+client = SynapseClient(api_key=os.environ["SYNAPSE_AGENT_KEY"])
 
-services = client.search("free", limit=10)
+services = client.search("svc_synapse_echo", limit=10)
 service = services[0]
 
 result = client.invoke(
     service.service_id,
-    {"prompt": "hello"},
-    cost_usdc=float(service.price_usdc),
+    {"message": "hello from SynapseNetwork"},
+    cost_usdc=str(service.price_usdc),
     idempotency_key="agent-job-001",
 )
 
@@ -31,6 +33,10 @@ receipt = client.get_invocation(result.invocation_id)
 print(receipt.invocation_id, receipt.status, receipt.charged_usdc)
 ```
 
-Full runbook: https://staging.synapse-network.ai/docs/sdk/python
+Full runbook: https://synapse-network.ai/docs/sdk/python
 
-完整接入手册：https://staging.synapse-network.ai/docs/sdk/python
+Staging sandbox runbook: https://staging.synapse-network.ai/docs/sdk/python
+
+完整接入手册：https://synapse-network.ai/docs/sdk/python
+
+Staging 沙盒接入手册：https://staging.synapse-network.ai/docs/sdk/python

@@ -20,6 +20,10 @@ The agent runtime should not receive owner private keys, wallet mnemonics, or ow
 
 Agent 运行时不应该接收 owner 私钥、钱包助记词或 owner JWT。
 
-Full docs: https://staging.synapse-network.ai/docs/concepts#credentials
+Full docs: https://synapse-network.ai/docs/concepts#credentials
 
-完整文档：https://staging.synapse-network.ai/docs/concepts#credentials
+Staging sandbox docs: https://staging.synapse-network.ai/docs/concepts#credentials
+
+完整文档：https://synapse-network.ai/docs/concepts#credentials
+
+Staging 沙盒文档：https://staging.synapse-network.ai/docs/concepts#credentials

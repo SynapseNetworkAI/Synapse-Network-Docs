@@ -2,6 +2,10 @@
 
 Canonical concepts docs:
 
+https://synapse-network.ai/docs/concepts
+
+Staging sandbox concepts:
+
 https://staging.synapse-network.ai/docs/concepts
 
 Important sections:

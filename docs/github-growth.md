@@ -1,8 +1,8 @@
 # GitHub Growth Checklist
 
-Use GitHub as the top-of-funnel surface and the staging docs site as the conversion surface.
+Use GitHub as the top-of-funnel surface and the production docs site as the conversion surface.
 
-把 GitHub 作为漏斗顶层入口，把 staging docs 站点作为最终转化阵地。
+把 GitHub 作为漏斗顶层入口，把 production docs 站点作为最终转化阵地。
 
 English appears first. Chinese follows each major section.
 
@@ -22,9 +22,13 @@ SynapseNetwork：AI Agent 通过平台调用 API，并通过区块链支持的 U
 
 Recommended website:
 
-https://staging.synapse-network.ai/docs
+https://synapse-network.ai/docs
 
 Primary dashboard CTA:
+
+https://synapse-network.ai
+
+Staging sandbox CTA:
 
 https://staging.synapse-network.ai
 
@@ -57,14 +61,14 @@ Recommended topics:
 Keep the README clear that:
 
 - `staging` is live now, testnet-backed, and uses MockUSDC.
-- `prod` is reserved for mainnet GA and uses real USDC.
-- Production should not be presented as generally available until DNS, health, funds, and human gates are ready.
+- `prod` uses the production docs and app domain and real USDC when production access is enabled.
+- If live production docs health checks fail, report it as a release blocker instead of switching the GitHub funnel back to staging.
 
 环境信息必须明确：
 
 - `staging` 当前可用，基于测试网，使用 MockUSDC。
-- `prod` 为主网 GA 预留，使用真实 USDC。
-- 在 DNS、health、资金和人工门控准备好之前，不要把 production 描述为已公开可用。
+- `prod` 使用 production docs/app 域名，并在 production access 开放时使用真实 USDC。
+- 如果线上 production docs health check 失败，应作为 release blocker 记录，不要把 GitHub funnel 切回 staging。
 
 ## Brand Message
 
