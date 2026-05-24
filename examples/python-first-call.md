@@ -5,7 +5,7 @@ Use this when the developer or AI agent already has an Agent Key from the Synaps
 当开发者或 AI Agent 已经从 Synapse Gateway Dashboard 获取 Agent Key 时，使用这个示例。
 
 ```bash
-pip install synapse-client
+pip install synapse-network-ai-sdk==1.0.0
 export SYNAPSE_ENV=staging
 export SYNAPSE_AGENT_KEY=agt_xxx
 ```

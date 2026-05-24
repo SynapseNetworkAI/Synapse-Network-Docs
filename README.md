@@ -19,6 +19,16 @@ SynapseNetwork lets agents discover services, call APIs through the platform, pa
 
 ## 30-Second Agent Quickstart
 
+Official SDK `1.0.0` packages are public:
+
+| Language | Install | Registry |
+| --- | --- | --- |
+| Python | `pip install synapse-network-ai-sdk==1.0.0` | [PyPI](https://pypi.org/project/synapse-network-ai-sdk/1.0.0/) |
+| TypeScript | `npm install @synapse-network-ai/sdk@1.0.0` | [npm](https://www.npmjs.com/package/@synapse-network-ai/sdk/v/1.0.0) |
+| Go | `go get github.com/SynapseNetworkAI/Synapse-Network-Sdk/go@v1.0.0` | [pkg.go.dev](https://pkg.go.dev/github.com/SynapseNetworkAI/Synapse-Network-Sdk/go@v1.0.0) |
+| Java/JVM | `mvn dependency:get -Dartifact=ai.synapse-network:synapse-network-sdk:1.0.0` | [Maven Central](https://repo1.maven.org/maven2/ai/synapse-network/synapse-network-sdk/1.0.0/) |
+| .NET | `dotnet add package SynapseNetwork.Sdk --version 1.0.0` | [NuGet](https://www.nuget.org/packages/SynapseNetwork.Sdk/1.0.0) |
+
 Step 1: Get your Agent Key.
 
 Open the **[Synapse Dashboard](https://www.synapse-network.ai)**, connect your wallet, and generate an Agent Key that starts with `agt_`.

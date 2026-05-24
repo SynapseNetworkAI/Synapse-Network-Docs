@@ -48,6 +48,15 @@ README 语言结构：
 - Java/JVM SDK: https://docs.synapse-network.ai/sdks/java
 - .NET SDK: https://docs.synapse-network.ai/sdks/dotnet
 
+## Public SDK Packages
+
+- Python `synapse-network-ai-sdk==1.0.0`: https://pypi.org/project/synapse-network-ai-sdk/1.0.0/
+- TypeScript `@synapse-network-ai/sdk@1.0.0`: https://www.npmjs.com/package/@synapse-network-ai/sdk/v/1.0.0
+- Go `github.com/SynapseNetworkAI/Synapse-Network-Sdk/go@v1.0.0`: https://pkg.go.dev/github.com/SynapseNetworkAI/Synapse-Network-Sdk/go@v1.0.0
+- Java `ai.synapse-network:synapse-network-sdk:1.0.0`: https://repo1.maven.org/maven2/ai/synapse-network/synapse-network-sdk/1.0.0/
+- .NET `SynapseNetwork.Sdk 1.0.0`: https://www.nuget.org/packages/SynapseNetwork.Sdk/1.0.0
+- Source repository: https://github.com/SynapseNetworkAI/Synapse-Network-Sdk
+
 ## V1 Docs Contribution Rule
 
 Public docs pages may link to this repository for source viewing, but do not add "Edit this page" flows to the product docs site until rendered pages are generated from this repository. Use GitHub Issues for docs feedback in V1.

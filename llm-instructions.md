@@ -32,6 +32,9 @@ AI Agent 中文规则：
 
 ## Python Pattern
 
+Published package: `synapse-network-ai-sdk==1.0.0` on PyPI:
+https://pypi.org/project/synapse-network-ai-sdk/1.0.0/
+
 Python 模式。
 
 ```python
@@ -54,6 +57,9 @@ receipt = client.get_invocation(result.invocation_id)
 ```
 
 ## TypeScript Pattern
+
+Published package: `@synapse-network-ai/sdk@1.0.0` on npm:
+https://www.npmjs.com/package/@synapse-network-ai/sdk/v/1.0.0
 
 TypeScript 模式。
 
