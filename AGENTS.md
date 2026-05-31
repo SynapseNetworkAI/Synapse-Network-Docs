@@ -30,6 +30,18 @@ Rules:
 8. Keep language switchers at the top of localized README files.
 9. `content/docs/**` is a one-way public mirror from the private `Synapse-Network/services/docs-front/content/docs/**` tree. Do not hand-edit mirrored docs pages unless the mirror contract changes.
 
+Bug List workflow:
+
+1. For real docs, discovery funnel, or rendered-docs bugs, use the workspace
+   Bug List workflow before fixing.
+2. Read `/Users/cliff/workspace/agent/llms.txt` for the workspace entry rule and
+   `/Users/cliff/workspace/agent/Synapse-Network-Growing/.agents/skills/bug-list-agent/SKILL.md`
+   for authoritative skill/MCP details.
+3. Intake or dedupe, claim before fixing, link branch/commit/PR, add validation
+   evidence, and close only when commit or PR evidence plus verification results
+   are complete.
+4. Do not put tokens, cookies, private keys, or secret values into bug evidence.
+
 规则：
 
 1. README 聚焦 TTFC、定位和 staging docs 链接。
