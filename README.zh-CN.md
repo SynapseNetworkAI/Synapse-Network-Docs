@@ -11,6 +11,7 @@
 面向 AI Agent 的 API 调用、支付与结算基础设施。
 
 [阅读完整文档](https://docs.synapse-network.ai/) ·
+[MCP 接入](https://docs.synapse-network.ai/mcp) ·
 [Python SDK](https://docs.synapse-network.ai/sdks/python) ·
 [TypeScript SDK](https://docs.synapse-network.ai/sdks/typescript) ·
 [SDK 仓库](https://github.com/SynapseNetworkAI/Synapse-Network-Sdk)
@@ -106,11 +107,23 @@ SynapseNetwork 采用严格的环境隔离来保护资金安全。
 
 最重要的规则：Agent 运行时代码应该使用 `SynapseClient`，不要初始化 owner/admin 钱包流程。
 
+## MCP 接入
+
+Synapse MCP 将 `discover_services`、`invoke_and_pay`、`get_receipt` 暴露给支持 MCP 的大模型客户端。
+
+- Hosted Remote MCP: `https://mcp.synapse-network.ai/mcp`
+- Local stdio MCP: `npx -y @synapse-network-ai/mcp-server`
+- Official MCP Registry 名称：`io.github.SynapseNetworkAI/synapse-network-mcp-server`
+- 接入文档：<https://docs.synapse-network.ai/mcp>
+
+BYOK 客户端应使用专用 `agt_xxx` Agent Key。ChatGPT custom MCP app 和 Codex OAuth 使用 Synapse OAuth；连接器拿到的是 OAuth token，不是原始 Agent Key。
+
 ## 完整文档
 
 这个仓库是 GitHub 流量入口、Agent 可读索引，以及公开文档源码镜像仓；完整产品化文档仍然在生产文档站点：
 
 - SDK hub: <https://docs.synapse-network.ai/sdks>
+- MCP 接入: <https://docs.synapse-network.ai/mcp>
 - Python SDK: <https://docs.synapse-network.ai/sdks/python>
 - TypeScript SDK: <https://docs.synapse-network.ai/sdks/typescript>
 - Concepts: <https://docs.synapse-network.ai/concepts/agent-settlement>
