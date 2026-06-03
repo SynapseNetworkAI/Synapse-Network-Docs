@@ -39,6 +39,10 @@ README 语言结构：
 权威产品文档。
 
 - Docs home: https://docs.synapse-network.ai/
+- MCP integrations: https://docs.synapse-network.ai/mcp
+- ChatGPT Custom MCP App: https://docs.synapse-network.ai/mcp/chatgpt
+- Codex MCP: https://docs.synapse-network.ai/mcp/codex
+- Official MCP Registry: https://docs.synapse-network.ai/mcp/registry
 - SDK hub: https://docs.synapse-network.ai/sdks
 - Python SDK: https://docs.synapse-network.ai/sdks/python
 - TypeScript SDK: https://docs.synapse-network.ai/sdks/typescript
@@ -56,6 +60,8 @@ README 语言结构：
 - Java `ai.synapse-network:synapse-network-sdk:1.0.0`: https://repo1.maven.org/maven2/ai/synapse-network/synapse-network-sdk/1.0.0/
 - .NET `SynapseNetwork.Sdk 1.0.0`: https://www.nuget.org/packages/SynapseNetwork.Sdk/1.0.0
 - Source repository: https://github.com/SynapseNetworkAI/Synapse-Network-Sdk
+- MCP package `@synapse-network-ai/mcp-server`: https://www.npmjs.com/package/@synapse-network-ai/mcp-server
+- MCP registry name `io.github.SynapseNetworkAI/synapse-network-mcp-server`: https://registry.modelcontextprotocol.io/v0.1/servers?search=SynapseNetworkAI
 
 ## V1 Docs Contribution Rule
 
@@ -84,3 +90,11 @@ Agent 接入应优先使用 `SynapseClient` 和 `agt_xxx` Agent Key。除非用�
 Public examples should read Agent Keys from `SYNAPSE_AGENT_KEY`, preserve USDC amounts as strings, and target `staging` for sandbox calls.
 
 公开示例应从 `SYNAPSE_AGENT_KEY` 读取 Agent Key，保持 USDC 金额为字符串，并使用 `staging` 进行沙盒调用。
+
+## MCP Runtime Rule
+
+Hosted Remote MCP uses `https://mcp.synapse-network.ai/mcp`. Local stdio MCP uses `npx -y @synapse-network-ai/mcp-server`.
+
+BYOK clients pass `Authorization: Bearer agt_xxx` or `SYNAPSE_AGENT_KEY`. OAuth clients such as ChatGPT custom MCP apps receive a Synapse OAuth token that maps server-side to a selected Agent Credential.
+
+Treat `discover_services` and `get_receipt` as read-only. Treat `invoke_and_pay` as consequential because it can spend from the linked Agent Credential.
