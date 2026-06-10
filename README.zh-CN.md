@@ -12,6 +12,7 @@
 
 [阅读完整文档](https://docs.synapse-network.ai/) ·
 [MCP 接入](https://docs.synapse-network.ai/mcp) ·
+[付费 API 调用 MCP](https://docs.synapse-network.ai/mcp/paid-api-calls) ·
 [Python SDK](https://docs.synapse-network.ai/sdks/python) ·
 [TypeScript SDK](https://docs.synapse-network.ai/sdks/typescript) ·
 [SDK 仓库](https://github.com/SynapseNetworkAI/Synapse-Network-Sdk)
@@ -115,6 +116,9 @@ Synapse MCP 将 `discover_services`、`invoke_and_pay`、`get_receipt` 暴露给
 - Local stdio MCP: `npx -y @synapse-network-ai/mcp-server`
 - Official MCP Registry 名称：`io.github.SynapseNetworkAI/synapse-network-mcp-server`
 - 接入文档：<https://docs.synapse-network.ai/mcp>
+- 付费 API 调用指南：<https://docs.synapse-network.ai/mcp/paid-api-calls>
+- Synapse vs paid MCP alternatives：<https://docs.synapse-network.ai/mcp/synapse-vs-paid-mcp>
+- 品牌消歧：<https://docs.synapse-network.ai/mcp/brand-disambiguation>
 
 BYOK 客户端应使用专用 `agt_xxx` Agent Key。ChatGPT custom MCP app 和 Codex OAuth 使用 Synapse OAuth；连接器拿到的是 OAuth token，不是原始 Agent Key。
 
