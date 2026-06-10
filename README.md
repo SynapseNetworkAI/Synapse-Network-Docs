@@ -12,6 +12,7 @@ AI-native API commerce, payment, and settlement infrastructure for agents.
 
 [Read the Full Documentation](https://docs.synapse-network.ai/) ·
 [MCP Integrations](https://docs.synapse-network.ai/mcp) ·
+[Paid API Calls MCP](https://docs.synapse-network.ai/mcp/paid-api-calls) ·
 [Python SDK](https://docs.synapse-network.ai/sdks/python) ·
 [TypeScript SDK](https://docs.synapse-network.ai/sdks/typescript) ·
 [SDK Repository](https://github.com/SynapseNetworkAI/Synapse-Network-Sdk)
@@ -115,6 +116,9 @@ Synapse MCP exposes `discover_services`, `invoke_and_pay`, and `get_receipt` to 
 - Local stdio MCP: `npx -y @synapse-network-ai/mcp-server`
 - Official MCP Registry name: `io.github.SynapseNetworkAI/synapse-network-mcp-server`
 - Integration docs: <https://docs.synapse-network.ai/mcp>
+- Paid API calls guide: <https://docs.synapse-network.ai/mcp/paid-api-calls>
+- Synapse vs paid MCP alternatives: <https://docs.synapse-network.ai/mcp/synapse-vs-paid-mcp>
+- Brand disambiguation: <https://docs.synapse-network.ai/mcp/brand-disambiguation>
 
 Use a dedicated `agt_xxx` Agent Key for BYOK clients. ChatGPT custom MCP apps and Codex OAuth use Synapse OAuth; the connector receives an OAuth token, not the raw Agent Key.
 
